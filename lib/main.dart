@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:go_jobs/components.dart';
+
 void main() => runApp(const JobsApp());
 
 class JobsApp extends StatelessWidget {
@@ -7,18 +9,12 @@ class JobsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Go Jobs App',
-      home: HomePage(),
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      home: OnboardingScreen(),
     );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
   }
 }
