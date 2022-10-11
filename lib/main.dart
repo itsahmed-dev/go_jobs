@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const StarterApp());
+void main() => runApp(const JobsApp());
 
-class StarterApp extends StatelessWidget {
-  const StarterApp({super.key});
+class JobsApp extends StatelessWidget {
+  const JobsApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Starter App',
+      title: 'Go Jobs App',
       home: HomePage(),
     );
   }

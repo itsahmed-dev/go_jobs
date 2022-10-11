@@ -1,6 +1,6 @@
 {
-    "name": "starter",
-    "short_name": "starter",
+    "name": "go_jobs",
+    "short_name": "go_jobs",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

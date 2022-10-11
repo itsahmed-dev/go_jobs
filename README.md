@@ -1,6 +1,8 @@
-# starter
+# go_jobs
 
-A new Flutter project.
+A project for understanding about Theming a Flutter app.
+
+Thanks to [Abu Anwar](https://www.youtube.com/watch?v=Q_KKxVt3doU 'Theming a Flutter App - Google Developers Space') for making this possible.
 
 ## Getting Started
 
