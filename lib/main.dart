@@ -13,8 +13,8 @@ class JobsApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Go Jobs App',
       theme: lightTheme,
-      darkTheme: darkTheme,
-      home: OnboardingScreen(),
+      // darkTheme: darkTheme,
+      home: HomeScreen(),
     );
   }
 }

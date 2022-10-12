@@ -5,6 +5,7 @@ import 'package:go_jobs/components.dart';
 final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   primaryColor: kPrimaryColor,
+  // primarySwatch: Colors.red,
   textTheme: GoogleFonts.poppinsTextTheme(ThemeData.light().textTheme),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: TextButton.styleFrom(
@@ -22,6 +23,7 @@ final ThemeData lightTheme = ThemeData(
 final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: kPrimaryColor,
+  // primarySwatch: Colors.red,
   scaffoldBackgroundColor: kBackgroundColorDarkTheme,
   textTheme: GoogleFonts.poppinsTextTheme(ThemeData.light().textTheme),
   elevatedButtonTheme: ElevatedButtonThemeData(
