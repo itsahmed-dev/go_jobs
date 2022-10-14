@@ -25,7 +25,7 @@ final ThemeData darkTheme = ThemeData(
   primaryColor: kPrimaryColor,
   // primarySwatch: Colors.red,
   scaffoldBackgroundColor: kBackgroundColorDarkTheme,
-  textTheme: GoogleFonts.poppinsTextTheme(ThemeData.light().textTheme),
+  textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: TextButton.styleFrom(
       backgroundColor: kPrimaryColor,
