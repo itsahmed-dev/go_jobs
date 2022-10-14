@@ -23,14 +23,12 @@ class SignInScreen extends StatelessWidget {
               Spacer(),
               Text(
                 'Sign In',
-                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                      fontWeight: FontWeight.bold,
-                      // color: Theme.of(context).brightness == Brightness.light
-                      //     ? Colors.black
-                      //     : Colors.white,
-                    ),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(fontWeight: FontWeight.bold),
               ),
-              SizedBox(),
+              SizedBox(height: kDefaultPadding),
               Form(
                 child: Column(
                   children: [

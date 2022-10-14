@@ -6,6 +6,7 @@ const kBlueColor = Color(0xFF1FA5C3);
 // Light Theme
 const kSecondaryColorLightTheme = Color(0xFFEEF1F7);
 const kBackgroundColorLightTheme = Color(0xFFF7F9FC);
+const kTextFieldOutlineBorderSideColor = Color(0xFFE7E9EC);
 const kTextColorLightTheme = Color(0xFF132144);
 const kBodyTextColorLightTheme = Color(0xFF788198);
 
