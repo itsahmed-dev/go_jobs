@@ -7,6 +7,9 @@ export 'package:go_jobs/screens/home_screen.dart';
 export 'package:go_jobs/screens/onboarding_screen.dart';
 export 'package:go_jobs/screens/sign_in_screen.dart';
 
+// Widgets
+export 'package:go_jobs/widgets/theme_toggle.dart';
+
 // Themes
 export 'package:go_jobs/themes.dart';
 

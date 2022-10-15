@@ -40,11 +40,16 @@ class OnboardingScreen extends StatelessWidget {
                   Spacer(flex: 2),
 
                   // Button
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text('Get Started'),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Center(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width / 2,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Get Started'),
+                        ),
+                      ),
                     ),
                   )
                 ],
@@ -53,6 +58,7 @@ class OnboardingScreen extends StatelessWidget {
           )
         ],
       ),
+      floatingActionButton: ThemeToggle(themeData: themeData),
     );
   }
 }

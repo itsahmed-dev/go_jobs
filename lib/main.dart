@@ -4,17 +4,31 @@ import 'package:go_jobs/components.dart';
 
 void main() => runApp(const JobsApp());
 
-class JobsApp extends StatelessWidget {
+class JobsApp extends StatefulWidget {
   const JobsApp({super.key});
+
+  @override
+  State<JobsApp> createState() => _JobsAppState();
+}
+
+class _JobsAppState extends State<JobsApp> {
+  @override
+  void initState() {
+    super.initState();
+    customTheme.addListener(() {
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Go Jobs App',
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      home: SignInScreen(),
+      title: 'Go Jobs',
+      theme: CustomTheme.lightTheme,
+      darkTheme: CustomTheme.darkTheme,
+      themeMode: customTheme.currentTheme,
+      home: HomeScreen(),
     );
   }
 }

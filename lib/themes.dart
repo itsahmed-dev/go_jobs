@@ -2,7 +2,25 @@ import 'package:flutter/material.dart';
 
 import 'package:go_jobs/components.dart';
 
-final ThemeData lightTheme = ThemeData(
+CustomTheme customTheme = CustomTheme();
+
+class CustomTheme with ChangeNotifier {
+  static bool isDarkTheme = true;
+  ThemeMode get currentTheme {
+    return isDarkTheme ? ThemeMode.dark : ThemeMode.light;
+  }
+
+  toggleTheme() {
+    isDarkTheme = !isDarkTheme;
+    notifyListeners();
+  }
+
+  static ThemeData get lightTheme => _lightTheme;
+
+  static ThemeData get darkTheme => _darkTheme;
+}
+
+final ThemeData _lightTheme = ThemeData(
   brightness: Brightness.light,
   primaryColor: kPrimaryColor,
   textTheme: GoogleFonts.poppinsTextTheme(ThemeData.light().textTheme)
@@ -15,7 +33,7 @@ final ThemeData lightTheme = ThemeData(
   ),
 );
 
-final ThemeData darkTheme = ThemeData(
+final ThemeData _darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: kPrimaryColor,
   scaffoldBackgroundColor: kBackgroundColorDarkTheme,

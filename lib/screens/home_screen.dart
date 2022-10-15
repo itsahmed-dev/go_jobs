@@ -32,17 +32,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: themeData.brightness == Brightness.light
-          ? FloatingActionButton(
-              onPressed: () {},
-              backgroundColor: kBodyTextColorLightTheme,
-              child: Icon(Icons.dark_mode),
-            )
-          : FloatingActionButton(
-              onPressed: () {},
-              backgroundColor: kBodyTextColorDarkTheme,
-              child: Icon(Icons.light_mode),
-            ),
+      floatingActionButton: ThemeToggle(themeData: themeData),
     );
   }
 }

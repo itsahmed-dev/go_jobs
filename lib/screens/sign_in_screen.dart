@@ -7,6 +7,7 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SafeArea(
@@ -16,16 +17,14 @@ class SignInScreen extends StatelessWidget {
             children: [
               Spacer(),
               SvgPicture.asset(
-                Theme.of(context).brightness == Brightness.light
+                themeData.brightness == Brightness.light
                     ? 'assets/icons/gojobs_light.svg'
                     : 'assets/icons/gojobs_dark.svg',
               ),
               Spacer(),
               Text(
                 'Sign In',
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineSmall!
+                style: themeData.textTheme.headlineSmall!
                     .copyWith(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: kDefaultPadding),
@@ -48,22 +47,28 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
               Spacer(flex: 2),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Center(
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(),
+                        ),
+                      ),
+                      child: Text('Sign In'.toUpperCase()),
                     ),
                   ),
-                  child: Text('Sign In'.toUpperCase()),
                 ),
               ),
             ],
           ),
         ),
       ),
+      floatingActionButton: ThemeToggle(themeData: themeData),
     );
   }
 }
