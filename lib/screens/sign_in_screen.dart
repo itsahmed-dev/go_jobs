@@ -5,6 +5,8 @@ import 'package:go_jobs/components.dart';
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
 
+  static const routeName = '/sign-in';
+
   @override
   Widget build(BuildContext context) {
     ThemeData themeData = Theme.of(context);
@@ -53,11 +55,9 @@ class SignInScreen extends StatelessWidget {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width / 2,
                     child: ElevatedButton(
-                      onPressed: () => Navigator.pushReplacement(
+                      onPressed: () => Navigator.pushNamed(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => HomeScreen(),
-                        ),
+                        HomeScreen.routeName,
                       ),
                       child: Text('Sign In'.toUpperCase()),
                     ),
@@ -68,7 +68,9 @@ class SignInScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: ThemeToggle(themeData: themeData),
+      floatingActionButton: ThemeToggle(
+        themeData: themeData,
+      ),
     );
   }
 }

@@ -46,7 +46,12 @@ class OnboardingScreen extends StatelessWidget {
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width / 2,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              SignInScreen.routeName,
+                            );
+                          },
                           child: Text('Get Started'),
                         ),
                       ),
@@ -58,7 +63,9 @@ class OnboardingScreen extends StatelessWidget {
           )
         ],
       ),
-      floatingActionButton: ThemeToggle(themeData: themeData),
+      floatingActionButton: ThemeToggle(
+        themeData: themeData,
+      ),
     );
   }
 }

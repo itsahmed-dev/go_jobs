@@ -5,16 +5,26 @@ import 'package:go_jobs/components.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  static const routeName = '/jobs';
+
   @override
   Widget build(BuildContext context) {
     ThemeData themeData = Theme.of(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          padding: const EdgeInsets.symmetric(
+            horizontal: kDefaultPadding,
+          ),
           child: Column(
             children: [
-              Text('Jobs', style: themeData.textTheme.titleLarge),
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: Text(
+                  'Jobs',
+                  style: themeData.textTheme.titleLarge,
+                ),
+              ),
               // List of Jobs
               SizedBox(height: kDefaultPadding),
               Expanded(
@@ -25,14 +35,21 @@ class HomeScreen extends StatelessWidget {
                   ),
                   itemCount: 5,
                   separatorBuilder: (BuildContext context, int index) =>
-                      SizedBox(height: kDefaultPadding),
+                      Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                    ),
+                    child: Divider(),
+                  ),
                 ),
               ),
             ],
           ),
         ),
       ),
-      floatingActionButton: ThemeToggle(themeData: themeData),
+      floatingActionButton: ThemeToggle(
+        themeData: themeData,
+      ),
     );
   }
 }
@@ -70,47 +87,64 @@ class JobCard extends StatelessWidget {
             ),
             SizedBox(width: kDefaultPadding),
             Expanded(
-              flex: 3,
+              flex: 9,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'We are looking for a UX designer to retouch our product.',
-                    style: themeData.brightness == Brightness.light
-                        ? TextStyle(color: Colors.black)
-                        : TextStyle(color: Colors.white),
-                  ),
-                  MaterialButton(
-                    onPressed: () {},
-                    color: kBlueColor.withOpacity(0.08),
-                    elevation: 0.0,
-                    minWidth: 30,
-                    height: 30,
-                    child: Text(
-                      'Open',
-                      style: TextStyle(color: kBlueColor, fontSize: 12),
-                    ),
-                  ),
-                  SizedBox(height: kDefaultPadding / 2),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Flex(
+                    direction: Axis.horizontal,
                     children: [
-                      JobCardInfo(
-                        svgSrc: "assets/icons/buildings.svg",
-                        text: "Fulltime, Office,",
-                        themeData: themeData,
+                      Expanded(
+                        flex: 3,
+                        child: Text(
+                          'We are looking for a UX designer to retouch our product.',
+                          style: themeData.brightness == Brightness.light
+                              ? TextStyle(color: Colors.black)
+                              : TextStyle(color: Colors.white),
+                        ),
                       ),
-                      JobCardInfo(
-                        svgSrc: "assets/icons/calendar.svg",
-                        text: "21-04-2021",
-                        themeData: themeData,
-                      ),
-                      JobCardInfo(
-                        svgSrc: "assets/icons/map_pin.svg",
-                        text: "Japan",
-                        themeData: themeData,
+                      Expanded(
+                        flex: 1,
+                        child: MaterialButton(
+                          onPressed: () {},
+                          color: kBlueColor.withOpacity(0.08),
+                          elevation: 0.0,
+                          minWidth: 30,
+                          height: 30,
+                          child: Text(
+                            'Open',
+                            style: TextStyle(
+                              color: kBlueColor,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
+                  ),
+                  SizedBox(height: kDefaultPadding / 2),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        JobCardInfo(
+                          svgSrc: 'assets/icons/buildings.svg',
+                          text: 'Fulltime, Office,',
+                          themeData: themeData,
+                        ),
+                        JobCardInfo(
+                          svgSrc: 'assets/icons/calendar.svg',
+                          text: '21-04-2021',
+                          themeData: themeData,
+                        ),
+                        JobCardInfo(
+                          svgSrc: 'assets/icons/map_pin.svg',
+                          text: 'Japan',
+                          themeData: themeData,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -144,7 +178,9 @@ class JobCardInfo extends StatelessWidget {
               : Colors.white,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
+          padding: const EdgeInsets.symmetric(
+            horizontal: kDefaultPadding / 2,
+          ),
           child: Text(
             text,
             style: themeData.brightness == Brightness.light

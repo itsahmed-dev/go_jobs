@@ -28,7 +28,12 @@ class _JobsAppState extends State<JobsApp> {
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,
       themeMode: customTheme.currentTheme,
-      home: HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => OnboardingScreen(),
+        SignInScreen.routeName: (context) => SignInScreen(),
+        HomeScreen.routeName: (context) => HomeScreen(),
+      },
     );
   }
 }
